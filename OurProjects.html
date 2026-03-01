@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -24,7 +24,13 @@
         <a href="index.html#portfolio">Projects</a>
         <a href="index.html#about">About</a>
         <a href="index.html#contact" class="cta-nav">Contact</a>
-        <button id="theme-toggle" class="btn secondary-btn" style="margin-left:20px;">Dark Mode</button>
+        <button
+          id="theme-toggle"
+          class="btn secondary-btn"
+          style="margin-left: 20px"
+        >
+          Dark Mode
+        </button>
       </nav>
     </header>
 
@@ -203,10 +209,16 @@
             <h4>Project Masao</h4>
             <p>HTML5, CSS Grid</p>
             <div class="project-buttons">
-              <a href="https://mohamedalnatsh.github.io/Msao/" class="btn-live" target="_blank"
+              <a
+                href="https://mohamedalnatsh.github.io/Msao/"
+                class="btn-live"
+                target="_blank"
                 ><i class="fas fa-eye"></i> Live View</a
               >
-              <a href="https://github.com/mohamedalnatsh/Msao" class="btn-github" target="_blank"
+              <a
+                href="https://github.com/mohamedalnatsh/Msao"
+                class="btn-github"
+                target="_blank"
                 ><i class="fab fa-github"></i> GitHub</a
               >
             </div>
@@ -253,46 +265,22 @@
         <div class="footer-contact">
           <h4>Contact</h4>
           <div class="contact-methods">
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener"
-              aria-label="Twitter"
+            <a href="#" target="_blank" rel="noopener" aria-label="Twitter"
               ><i class="fab fa-twitter" aria-hidden="true"></i> Twitter</a
             >
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener"
-              aria-label="WhatsApp"
+            <a href="#" target="_blank" rel="noopener" aria-label="WhatsApp"
               ><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp</a
             >
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener"
-              aria-label="Instagram"
+            <a href="#" target="_blank" rel="noopener" aria-label="Instagram"
               ><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a
             >
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener"
-              aria-label="Facebook"
+            <a href="#" target="_blank" rel="noopener" aria-label="Facebook"
               ><i class="fab fa-facebook-f" aria-hidden="true"></i> Facebook</a
             >
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener"
-              aria-label="LinkedIn"
+            <a href="#" target="_blank" rel="noopener" aria-label="LinkedIn"
               ><i class="fab fa-linkedin-in" aria-hidden="true"></i> LinkedIn</a
             >
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener"
-              aria-label="GitHub"
+            <a href="#" target="_blank" rel="noopener" aria-label="GitHub"
               ><i class="fab fa-github" aria-hidden="true"></i> GitHub</a
             >
           </div>
@@ -303,19 +291,19 @@
       </div>
     </footer>
     <script>
-      const toggleBtn = document.getElementById('theme-toggle');
+      const toggleBtn = document.getElementById("theme-toggle");
       const bodyEl = document.body;
-      if (localStorage.getItem('theme') === 'dark') {
-        bodyEl.classList.add('dark-mode');
-        toggleBtn.textContent = 'Light Mode';
+      if (localStorage.getItem("theme") === "dark") {
+        bodyEl.classList.add("dark-mode");
+        toggleBtn.textContent = "Light Mode";
       }
-      toggleBtn.addEventListener('click', () => {
-        if (bodyEl.classList.toggle('dark-mode')) {
-          toggleBtn.textContent = 'Light Mode';
-          localStorage.setItem('theme','dark');
+      toggleBtn.addEventListener("click", () => {
+        if (bodyEl.classList.toggle("dark-mode")) {
+          toggleBtn.textContent = "Light Mode";
+          localStorage.setItem("theme", "dark");
         } else {
-          toggleBtn.textContent = 'Dark Mode';
-          localStorage.setItem('theme','light');
+          toggleBtn.textContent = "Dark Mode";
+          localStorage.setItem("theme", "light");
         }
       });
     </script>
