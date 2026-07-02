@@ -1,77 +1,149 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>OptiCore — The Core of Optimization</title>
-<meta name="description" content="OptiCore solutions: secure your assets, build your web presence, and automate your workflow." />
-<link rel="icon" type="image/webp" href="/images/opticore-logo.webp" />
-<link rel="stylesheet" href="styles.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" />
-</head>
-<body>
-  <header class="topbar">
-    <div class="brand">
-      <img src="/images/opticore-logo.webp" alt="OptiCore logo" class="brand-mark" />
-      <span>OptiCore</span>
-    </div>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OptiCore — The Core of Optimization</title>
+    <meta
+      name="description"
+      content="OptiCore solutions: secure your assets, build your web presence, and automate your workflow."
+    />
+    <link rel="icon" type="image/webp" href="/images/opticore-logo.webp" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <a href="index.html" class="logo-link">
+          <img
+            src="/images/opticore-logo.webp"
+            alt="OptiCore logo"
+            class="brand-mark"
+          />
+          <span>OptiCore</span>
+        </a>
+      </div>
+      <button id="langToggle" class="lang-toggle" aria-label="Toggle language">🌐 العربية</button>
+    </header>
 
-  <main class="hero">
-    <img src="/images/opticore-logo.webp" alt="" class="hero-logo" />
-    <h1>OptiCore Solutions</h1>
+    <main class="hero">
+      <img src="/images/opticore-logo.webp" alt="" class="hero-logo" />
+      <h1><span data-i18n="heroTitle">OptiCore Solutions</span></h1>
 
-    <section class="cards">
-      <article class="card" data-card="1">
-        <div class="card-art">
-          <img src="/images/secure-assets.png" alt="Secure your assets illustration" />
-        </div>
-        <h2>🛡️ 1. Secure Your Assets</h2>
-        <button class="pill pill-primary"><i class="fa-solid fa-shield-halved"></i> Site &amp; Server Hardening</button>
-        <button class="pill"><i class="fa-solid fa-network-wired"></i> Network &amp; Router Audit</button>
-      </article>
+      <section class="cards">
+        <article class="card" data-card="1">
+          <div class="card-art">
+            <img
+              src="/images/secure-assets.png"
+              alt="Secure your assets illustration"
+            />
+          </div>
+          <h2><span class="title-emoji">🛡️</span> <span data-i18n="card1Title">1. Secure Your Assets</span></h2>
+          <button class="pill pill-primary">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span data-i18n="card1Btn1">Site &amp; Server Hardening</span>
+          </button>
+          <button class="pill">
+            <i class="fa-solid fa-network-wired"></i>
+            <span data-i18n="card1Btn2">Network &amp; Router Audit</span>
+          </button>
+        </article>
 
-      <article class="card" data-card="2">
-        <div class="card-art">
-          <img src="/images/web-presence.png" alt="Build your web presence illustration" />
-        </div>
-        <h2>&lt;/&gt; 2. Build Your Web Presence</h2>
-        <button class="pill"><i class="fa-solid fa-code"></i> Dynamic Frontend UIs</button>
-        <button class="pill"><i class="fa-solid fa-laptop-code"></i> UX-Focused Lightweight Sites</button>
-      </article>
+        <article class="card" data-card="2">
+          <div class="card-art">
+            <img
+              src="/images/web-presence.png"
+              alt="Build your web presence illustration"
+            />
+          </div>
+          <h2><span class="title-emoji">🌐</span> <span data-i18n="card2Title">2. Build Your Web Presence</span></h2>
+          <button class="pill">
+            <i class="fa-solid fa-code"></i>
+            <span data-i18n="card2Btn1">Dynamic Frontend UIs</span>
+          </button>
+          <button class="pill">
+            <i class="fa-solid fa-laptop-code"></i>
+            <span data-i18n="card2Btn2">UX-Focused Lightweight Sites</span>
+          </button>
+        </article>
 
-      <article class="card" data-card="3">
-        <div class="card-art">
-          <img src="/images/automate-workflow.png" alt="Automate your workflow illustration" />
-        </div>
-        <h2>⚙️ 3. Automate Your Workflow</h2>
-        <button class="pill"><i class="fa-brands fa-telegram"></i> Custom Telegram Bots</button>
-        <button class="pill"><i class="fa-brands fa-whatsapp"></i> WhatsApp Business Automation</button>
-      </article>
-    </section>
+        <article class="card" data-card="3">
+          <div class="card-art">
+            <img
+              src="/images/automate-workflow.png"
+              alt="Automate your workflow illustration"
+            />
+          </div>
+          <h2><span class="title-emoji">⚙️</span> <span data-i18n="card3Title">3. Automate Your Workflow</span></h2>
+          <button class="pill">
+            <i class="fa-brands fa-telegram"></i>
+            <span data-i18n="card3Btn1">Custom Telegram Bots</span>
+          </button>
+          <button class="pill">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span data-i18n="card3Btn2">WhatsApp Business Automation</span>
+          </button>
+        </article>
+      </section>
 
-    <button id="cta" class="cta">Start a Project Now</button>
-  </main>
+      <button id="cta" class="cta"><span data-i18n="ctaText">Start a Project Now</span></button>
+    </main>
 
-  <div class="sparkle" aria-hidden="true">✦</div>
+    <footer class="footer">
+      <nav class="foot-links">
+        <a href="#contact"><span data-i18n="footerContact">Contact Us</span></a> | 
+        <a href="#terms"><span data-i18n="footerTerms">terms</span></a> | 
+        <a href="#privacy"><span data-i18n="footerPrivacy">privacy</span></a> | 
+        <a href="#services"><span data-i18n="footerServices">services</span></a> | 
+        <a href="#support"><span data-i18n="footerSupport">support</span></a>
+      </nav>
+      <div class="socials">
+        <!-- الواتساب -->
+        <a
+          href="https://wa.me/972567653938"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg"
+            alt="WhatsApp"
+          />
+        </a>
 
-  <footer class="footer">
-    <nav class="foot-links">
-      <a href="#contact">Contact Us</a> |
-      <a href="#terms">terms</a> |
-      <a href="#privacy">privacy</a> |
-      <a href="#services">services</a> |
-      <a href="#support">support</a>
-    </nav>
-    <div class="socials">
-      <a href="#" aria-label="WhatsApp"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg" alt="WhatsApp" /></a>
-      <a href="#" aria-label="GitHub"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg" alt="GitHub" /></a>
-      <a href="#" aria-label="Instagram"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg" alt="Instagram" /></a>
-      <a href="#" aria-label="LinkedIn"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" alt="LinkedIn" /></a>
-    </div>
-    <div class="tag">OptiCore.dev | The Core of Optimization</div>
-  </footer>
+        <!-- جيت هاب -->
+        <a
+          href="https://github.com/mohamedalnatsh"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg"
+            alt="GitHub"
+          />
+        </a>
 
-  <script src="script.js"></script>
-</body>
+        <!-- إنستغرام -->
+        <a
+          href="https://www.instagram.com/opticore.dev/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg"
+            alt="Instagram"
+          />
+        </a>
+      </div>
+      <div class="tag"><span data-i18n="footerTag">OptiCore.dev | The Core of Optimization</span></div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
