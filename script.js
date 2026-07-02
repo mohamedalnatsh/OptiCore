@@ -1,4 +1,4 @@
-﻿document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const cta = document.getElementById('cta');
   const langToggle = document.getElementById('langToggle');
   const i18nElements = document.querySelectorAll('[data-i18n]');
