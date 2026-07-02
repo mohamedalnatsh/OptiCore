@@ -13,55 +13,59 @@
   <header class="topbar">
     <div class="brand">
       <img src="/images/opticore-logo.webp" alt="OptiCore logo" class="brand-mark" />
-      <span>OptiCore</span>
+      <span data-i18n="brand">OptiCore</span>
     </div>
+    <button id="lang-toggle" class="lang-btn" aria-label="Switch language">
+      <i class="fa-solid fa-globe"></i>
+      <span class="lang-label">العربية</span>
+    </button>
   </header>
 
   <main class="hero">
     <img src="/images/opticore-logo.webp" alt="" class="hero-logo" />
-    <h1>OptiCore Solutions</h1>
+    <h1 data-i18n="hero_title">OptiCore Solutions</h1>
 
     <section class="cards">
       <article class="card" data-card="1">
         <div class="card-art">
           <img src="/images/secure-assets.png" alt="Secure your assets illustration" />
         </div>
-        <h2>🛡️ 1. Secure Your Assets</h2>
-        <button class="pill pill-primary"><i class="fa-solid fa-shield-halved"></i> Site &amp; Server Hardening</button>
-        <button class="pill"><i class="fa-solid fa-network-wired"></i> Network &amp; Router Audit</button>
+        <h2 data-i18n="card1_title">🛡️ 1. Secure Your Assets</h2>
+        <button class="pill pill-primary"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="card1_p1">Site &amp; Server Hardening</span></button>
+        <button class="pill"><i class="fa-solid fa-network-wired"></i> <span data-i18n="card1_p2">Network &amp; Router Audit</span></button>
       </article>
 
       <article class="card" data-card="2">
         <div class="card-art">
           <img src="/images/web-presence.png" alt="Build your web presence illustration" />
         </div>
-        <h2>&lt;/&gt; 2. Build Your Web Presence</h2>
-        <button class="pill"><i class="fa-solid fa-code"></i> Dynamic Frontend UIs</button>
-        <button class="pill"><i class="fa-solid fa-laptop-code"></i> UX-Focused Lightweight Sites</button>
+        <h2 data-i18n="card2_title">&lt;/&gt; 2. Build Your Web Presence</h2>
+        <button class="pill"><i class="fa-solid fa-code"></i> <span data-i18n="card2_p1">Dynamic Frontend UIs</span></button>
+        <button class="pill"><i class="fa-solid fa-laptop-code"></i> <span data-i18n="card2_p2">UX-Focused Lightweight Sites</span></button>
       </article>
 
       <article class="card" data-card="3">
         <div class="card-art">
           <img src="/images/automate-workflow.png" alt="Automate your workflow illustration" />
         </div>
-        <h2>⚙️ 3. Automate Your Workflow</h2>
-        <button class="pill"><i class="fa-brands fa-telegram"></i> Custom Telegram Bots</button>
-        <button class="pill"><i class="fa-brands fa-whatsapp"></i> WhatsApp Business Automation</button>
+        <h2 data-i18n="card3_title">⚙️ 3. Automate Your Workflow</h2>
+        <button class="pill"><i class="fa-brands fa-telegram"></i> <span data-i18n="card3_p1">Custom Telegram Bots</span></button>
+        <button class="pill"><i class="fa-brands fa-whatsapp"></i> <span data-i18n="card3_p2">WhatsApp Business Automation</span></button>
       </article>
     </section>
 
-    <button id="cta" class="cta">Start a Project Now</button>
+    <button id="cta" class="cta" data-i18n="cta">Start a Project Now</button>
   </main>
 
   <div class="sparkle" aria-hidden="true">✦</div>
 
   <footer class="footer">
     <nav class="foot-links">
-      <a href="#contact">Contact Us</a> |
-      <a href="#terms">terms</a> |
-      <a href="#privacy">privacy</a> |
-      <a href="#services">services</a> |
-      <a href="#support">support</a>
+      <a href="#contact" data-i18n="f_contact">Contact Us</a> |
+      <a href="#terms" data-i18n="f_terms">terms</a> |
+      <a href="#privacy" data-i18n="f_privacy">privacy</a> |
+      <a href="#services" data-i18n="f_services">services</a> |
+      <a href="#support" data-i18n="f_support">support</a>
     </nav>
     <div class="socials">
       <a href="#" aria-label="WhatsApp"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg" alt="WhatsApp" /></a>
@@ -69,7 +73,7 @@
       <a href="#" aria-label="Instagram"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg" alt="Instagram" /></a>
       <a href="#" aria-label="LinkedIn"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linkedin.svg" alt="LinkedIn" /></a>
     </div>
-    <div class="tag">OptiCore.dev | The Core of Optimization</div>
+    <div class="tag" data-i18n="tag">OptiCore.dev | The Core of Optimization</div>
   </footer>
 
   <script src="script.js"></script>

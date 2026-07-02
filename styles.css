@@ -25,6 +25,25 @@ html, body {
   display: flex; align-items: center; justify-content: space-between;
   padding: 16px 24px;
 }
+.lang-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, #0f1a38 0%, #14224a 100%);
+  color: var(--text);
+  font-size: 13px; font-weight: 500;
+  cursor: pointer;
+  transition: border-color .2s ease, background .2s ease, transform .1s ease, box-shadow .2s ease;
+}
+.lang-btn:hover {
+  border-color: var(--accent-2);
+  box-shadow: 0 6px 18px rgba(59,130,246,.25);
+}
+.lang-btn:active { transform: scale(.97); }
+.lang-btn i { color: var(--accent-2); font-size: 14px; }
+html[dir="rtl"] body { text-align: right; }
+html[dir="rtl"] .card h2 { text-align: right; }
 .brand { display: flex; align-items: center; gap: 8px; font-weight: 600; letter-spacing: .3px; }
 .brand-mark { width: 22px; height: 22px; }
 
