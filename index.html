@@ -27,14 +27,16 @@
           <span>OptiCore</span>
         </a>
       </div>
-      <button id="langToggle" class="lang-toggle" aria-label="Toggle language">🌐 العربية</button>
+      <button id="langToggle" class="lang-toggle" aria-label="Toggle language">
+        🌐 العربية
+      </button>
     </header>
 
     <main class="hero">
       <img src="/images/opticore-logo.webp" alt="" class="hero-logo" />
       <h1><span data-i18n="heroTitle">OptiCore Solutions</span></h1>
 
-      <section class="cards">
+      <section class="cards" id="projects">
         <article class="card" data-card="1">
           <div class="card-art">
             <img
@@ -42,7 +44,10 @@
               alt="Secure your assets illustration"
             />
           </div>
-          <h2><span class="title-emoji">🛡️</span> <span data-i18n="card1Title">1. Secure Your Assets</span></h2>
+          <h2>
+            <span class="title-emoji">🛡️</span>
+            <span data-i18n="card1Title">1. Secure Your Assets</span>
+          </h2>
           <button class="pill pill-primary">
             <i class="fa-solid fa-shield-halved"></i>
             <span data-i18n="card1Btn1">Site &amp; Server Hardening</span>
@@ -60,7 +65,10 @@
               alt="Build your web presence illustration"
             />
           </div>
-          <h2><span class="title-emoji">🌐</span> <span data-i18n="card2Title">2. Build Your Web Presence</span></h2>
+          <h2>
+            <span class="title-emoji">🌐</span>
+            <span data-i18n="card2Title">2. Build Your Web Presence</span>
+          </h2>
           <button class="pill">
             <i class="fa-solid fa-code"></i>
             <span data-i18n="card2Btn1">Dynamic Frontend UIs</span>
@@ -78,7 +86,10 @@
               alt="Automate your workflow illustration"
             />
           </div>
-          <h2><span class="title-emoji">⚙️</span> <span data-i18n="card3Title">3. Automate Your Workflow</span></h2>
+          <h2>
+            <span class="title-emoji">⚙️</span>
+            <span data-i18n="card3Title">3. Automate Your Workflow</span>
+          </h2>
           <button class="pill">
             <i class="fa-brands fa-telegram"></i>
             <span data-i18n="card3Btn1">Custom Telegram Bots</span>
@@ -90,18 +101,24 @@
         </article>
       </section>
 
-      <a id="cta" class="cta" href="contact.html" role="button">
-        <span data-i18n="ctaText">Start a Project Now</span>
-      </a>
+      <div class="hero-actions">
+        <a id="cta" class="cta" href="contact.html" role="button">
+          <span data-i18n="ctaText">Start a Project Now</span>
+        </a>
+        <a class="cta cta-secondary" href="#projects" role="button">
+          <span data-i18n="projectsCta">Our projects</span>
+        </a>
+      </div>
     </main>
 
     <footer class="footer">
       <nav class="foot-links">
-        <a href="#contact"><span data-i18n="footerContact">Contact Us</span></a> | 
-        <a href="#terms"><span data-i18n="footerTerms">terms</span></a> | 
-        <a href="#privacy"><span data-i18n="footerPrivacy">privacy</span></a> | 
-        <a href="#services"><span data-i18n="footerServices">services</span></a> | 
-        <a href="#support"><span data-i18n="footerSupport">support</span></a>
+        <a href="contact.html"><span data-i18n="footerContact">Contact Us</span></a>
+        | <a href="terms.html"><span data-i18n="footerTerms">terms</span></a> |
+        <a href="privacy.html"><span data-i18n="footerPrivacy">privacy</span></a> |
+        <a href="index.html"><span data-i18n="footerServices">services</span></a>
+        |
+        <a href="support.html"><span data-i18n="footerSupport">support</span></a>
       </nav>
       <div class="socials">
         <!-- الواتساب -->
@@ -143,7 +160,11 @@
           />
         </a>
       </div>
-      <div class="tag"><span data-i18n="footerTag">OptiCore.dev | The Core of Optimization</span></div>
+      <div class="tag">
+        <span data-i18n="footerTag"
+          >OptiCore.dev | The Core of Optimization</span
+        >
+      </div>
     </footer>
 
     <script src="script.js"></script>

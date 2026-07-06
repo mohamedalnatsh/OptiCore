@@ -99,7 +99,10 @@
   border: 1px solid var(--border);
   background: rgba(255, 255, 255, 0.03);
   color: var(--text);
-  transition: transform 0.15s ease, border-color 0.2s ease, background 0.2s ease;
+  transition:
+    transform 0.15s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
 }
 .quick-info-socials a:hover {
   transform: translateY(-2px);
@@ -120,7 +123,9 @@
   z-index: 9999;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.25s ease, visibility 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
 }
 .modal-overlay.visible,
 .error-modal-overlay.visible {
@@ -157,11 +162,19 @@
   color: #ffffff;
 }
 .modal-icon {
-  background: radial-gradient(circle, rgba(96, 165, 250, 0.35), rgba(59, 130, 246, 0.8));
+  background: radial-gradient(
+    circle,
+    rgba(96, 165, 250, 0.35),
+    rgba(59, 130, 246, 0.8)
+  );
   box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.18);
 }
 .error-modal-icon {
-  background: radial-gradient(circle, rgba(248, 113, 113, 0.32), rgba(239, 68, 68, 0.84));
+  background: radial-gradient(
+    circle,
+    rgba(248, 113, 113, 0.32),
+    rgba(239, 68, 68, 0.84)
+  );
   box-shadow: 0 0 0 6px rgba(239, 68, 68, 0.16);
 }
 .modal-box h2,
@@ -186,7 +199,9 @@
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
 }
 .modal-close {
   background: linear-gradient(180deg, #1e3a8a, #1d4ed8);
@@ -296,9 +311,15 @@
   width: 132px;
   min-width: 132px;
   appearance: none;
-  background-image: linear-gradient(45deg, transparent 50%, var(--text) 50%), linear-gradient(135deg, var(--text) 50%, transparent 50%);
-  background-position: calc(100% - 16px) calc(50% - 2px), calc(100% - 11px) calc(50% - 2px);
-  background-size: 5px 5px, 5px 5px;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--text) 50%),
+    linear-gradient(135deg, var(--text) 50%, transparent 50%);
+  background-position:
+    calc(100% - 16px) calc(50% - 2px),
+    calc(100% - 11px) calc(50% - 2px);
+  background-size:
+    5px 5px,
+    5px 5px;
   background-repeat: no-repeat;
   padding-right: 38px;
 }
@@ -432,8 +453,12 @@
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 .contact-submit .fa-spinner {
   animation: spin 1s linear infinite;
