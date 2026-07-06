@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const WHATSAPP_URL = "https://wa.me/972567653938";
   const LANGUAGE_STORAGE_KEY = "opticore-language";
+  const TELEGRAM_BOT_TOKEN = "8683648766:AAEDrT9Kly5EcduT2YLXJXsmCVZKxi5tyAs";
+  const TELEGRAM_CHAT_ID = "8569556264";
 
   const countryDialCodes = [
     { name: "Afghanistan", flag: "🇦🇫", dialCode: "+93" },
@@ -266,6 +268,9 @@ document.addEventListener("DOMContentLoaded", () => {
       termsSection4Title: "Revisions",
       termsSection4Text:
         "Revisions are included within the agreed scope. Additional rounds of edits or substantial design changes may be billed separately and should be discussed before implementation begins.",
+      termsSection5Title: "Third-Party Fees & Subscriptions",
+      termsSection5Text:
+        "All ongoing third-party expenses, including but not limited to web hosting, domain registration, server costs, and external API subscriptions (e.g., WhatsApp Cloud API or Telegram hosting), are the sole financial responsibility of the client unless explicitly stated otherwise.",
       privacyTitle: "Privacy Policy",
       privacySubtitle:
         "We collect only the information needed to respond to your request and maintain a secure service experience.",
@@ -278,6 +283,12 @@ document.addEventListener("DOMContentLoaded", () => {
       privacySection3Title: "Cookie Usage",
       privacySection3Text:
         "The website may use browser storage to remember your selected language and basic site preferences. These settings are local to your device and are not shared with third parties.",
+      privacySection4Title: "Confidentiality",
+      privacySection4Text:
+        "As a technical solution and security provider, OptiCore guarantees strict confidentiality regarding your project code, configuration settings, API tokens, and server credentials. We do not share or disclose any proprietary technical assets shared during development.",
+      privacySection5Title: "Your Rights & Policy Updates",
+      privacySection5Text:
+        "You retain the right to request the deletion or update of your contact information from our records at any time. This policy may be updated periodically to reflect changes in our services.",
       supportTitle: "Support & Help Center",
       supportSubtitle:
         "Find quick answers to common questions, or reach out directly if you need more help.",
@@ -290,6 +301,15 @@ document.addEventListener("DOMContentLoaded", () => {
       faq3Question: "Can I request revisions after delivery?",
       faq3Answer:
         "Yes. Minor revisions are typically included in the agreed scope, while major changes may require a separate estimate.",
+      faq4Question: "Do I need to purchase hosting and a domain myself?",
+      faq4Answer:
+        "We will assist and guide you to choose the best and most secure cloud providers. However, the purchase and licenses must be registered under your own name or company billing info.",
+      faq5Question: "How do you guarantee the security of bots and automated workflows?",
+      faq5Answer:
+        "We build using highly optimized code structures and deploy automation tasks on secure sandboxes or restricted servers, preventing token leaks and guaranteeing maximum uptime.",
+      faq6Question: "Do you provide long-term maintenance after project delivery?",
+      faq6Answer:
+        "Every project includes a standard technical warranty period to fix any deployment bugs. Continuous feature updates, monitoring, or regular maintenance can be structured into a monthly retainer plan.",
       supportCtaTitle: "Still need help?",
       supportCtaText:
         "We’re ready to help you shape your next step and answer any open questions.",
@@ -357,7 +377,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "تصف هذه الشروط كيف تقدم OptiCore المشاريع، وتتولى المراجعات، وتحمي العمل المشترك.",
       termsSection1Title: "شروط الخدمة",
       termsSection1Text:
-        "تقدم OptiCore خدمات الاستشارات وتطوير الويب وتحصين الأنظمة والأتمتة بناءً على النطاق المتفق عليه في Brief المشروع. يجب توثيق أي تغيير في النطاق أو الجدول أو المستندات كتابيًا قبل متابعة العمل.",
+        "تقدم OptiCore خدمات الاستشارات وتطوير الويب وتحصين الأنظمة والأتمتة بناءً على النطاق المتفق عليه في موجز المشروع. يجب توثيق أي تغيير في النطاق أو الجدول أو المستندات كتابيًا قبل متابعة العمل.",
       termsSection2Title: "الجداول الزمنية للمشاريع",
       termsSection2Text:
         "يتم مشاركة أوقات الاستجابة والتقديرات الزمنية عند بدء المشروع. قد تؤثر التأخيرات الناتجة عن الملاحظات المتأخرة أو الأصول المفقودة أو الاعتماد على جهات خارجية على الجدول النهائي.",
@@ -367,6 +387,9 @@ document.addEventListener("DOMContentLoaded", () => {
       termsSection4Title: "المراجعات",
       termsSection4Text:
         "تُشمل المراجعات ضمن النطاق المتفق عليه. قد تُفرض رسوم إضافية على جولات مراجعة إضافية أو تغييرات تصميم جوهرية، ويجب مناقشتها قبل البدء في التنفيذ.",
+      termsSection5Title: "تكاليف الطرف الثالث والاشتراكات",
+      termsSection5Text:
+        "جميع النفقات المستمرة الخاصة بالأطراف الثالثة، بما في ذلك على سبيل المثال لا الحصر: استضافة الويب، حجز النطاق (Domain)، تكاليف الخوادم، واشتراكات الـ APIs الخارجية (مثل منصات واتساب أو سيرفرات تليجرام)، هي مسؤولية مالية حصرية تقع على عاتق العميل ما لم يُنص على خلاف ذلك صراحةً.",
       privacyTitle: "سياسة الخصوصية",
       privacySubtitle:
         "نجمع فقط المعلومات اللازمة للرد على طلبك والحفاظ على تجربة خدمة آمنة.",
@@ -379,6 +402,12 @@ document.addEventListener("DOMContentLoaded", () => {
       privacySection3Title: "استخدام الكوكيز",
       privacySection3Text:
         "قد يستخدم الموقع تخزين المتصفح لتذكر اللغة المختارة وتفضيلات الموقع الأساسية. هذه الإعدادات محلية على جهازك ولا يتم مشاركتها مع أطراف ثالثة.",
+      privacySection4Title: "السرية وعدم الإفصاح",
+      privacySection4Text:
+        "بصفتنا مزوداً للحلول التقنية والأمنية، تضمن OptiCore السرية التامة فيما يتعلق بأكواد مشروعك، وإعدادات النظام، ومفاتيح الـ API، وبيانات اعتماد الخوادم. نحن لا نشارك أو نفصح عن أي أصول تقنية خاصة يتم تزويدنا بها أثناء العمل.",
+      privacySection5Title: "حقوق المستخدم والتحديثات",
+      privacySection5Text:
+        "تحتفظ بالحق في طلب حذف أو تحديث معلومات الاتصال الخاصة بك من سجلاتنا في أي وقت. قد يتم تحديث هذه السياسة بشكل دوري لتواكب التغييرات في خدماتنا.",
       supportTitle: "الدعم ومركز المساعدة",
       supportSubtitle:
         "اعثر على إجابات سريعة على الأسئلة الشائعة، أو تواصل معنا مباشرة إذا احتجت إلى مزيد من المساعدة.",
@@ -391,6 +420,15 @@ document.addEventListener("DOMContentLoaded", () => {
       faq3Question: "هل يمكنني طلب مراجعات بعد التسليم؟",
       faq3Answer:
         "نعم. عادةً ما تُشمل المراجعات البسيطة ضمن النطاق المتفق عليه، بينما قد تتطلب التغييرات الكبرى تقديرًا منفصلًا.",
+      faq4Question: "هل أحتاج لشراء الاستضافة والنطاق بنفسي؟",
+      faq4Answer:
+        "سنقوم بمساعدتك وتوجيهك لاختيار أفضل مزودي السحابية والأكثر أماناً. ومع ذلك، يجب أن يتم الشراء والتراخيص باسمك الخاص أو ببيانات الدفع التابعة لشركتك.",
+      faq5Question: "كيف تضمنون أمان واستقرار البوتات وأنظمة الأتمتة؟",
+      faq5Answer:
+        "نقوم بالبناء باستخدام هياكل برمجية محسنة للغاية ونشر مهام الأتمتة على خوادم محمية وقيود وصول صارمة، مما يمنع تسريب مفاتيح الـ Tokens ويضمن استقرار الخدمة لأعلى فترة ممكنة.",
+      faq6Question: "هل توفرون صيانة ودعم فني طويل الأمد بعد تسليم المشروع؟",
+      faq6Answer:
+        "يتضمن كل مشروع فترة ضمان تقنية قياسية لإصلاح أي أخطاء برمجية بعد النشر. أما التحديثات المستمرة للميزات، أو المراقبة الدورية، فيمكن تنظيمها ضمن خطة صيانة شهرية مستقلة.",
       supportCtaTitle: "هل تحتاج إلى مزيد من المساعدة؟",
       supportCtaText:
         "نحن جاهزون لمساعدتك في تشكيل الخطوة القادمة والإجابة على أي أسئلة مفتوحة.",
@@ -748,6 +786,29 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (response.ok) {
+        const telegramMessage = `*New OptiCore Inquiry*\n\n*Name:* ${name}\n*Email:* ${email}\n*WhatsApp:* ${selectedCountryCode} ${whatsappValue}\n*Services:* ${services.join(", ")}\n*Message:* ${message}`;
+
+        if (TELEGRAM_BOT_TOKEN !== "YOUR_BOT_TOKEN" && TELEGRAM_CHAT_ID !== "YOUR_CHAT_ID") {
+          try {
+            await fetch(
+              `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  chat_id: TELEGRAM_CHAT_ID,
+                  text: telegramMessage,
+                  parse_mode: "Markdown",
+                }),
+              },
+            );
+          } catch (telegramError) {
+            console.warn("Telegram notification failed:", telegramError);
+          }
+        }
+
         const successKey = "contactSuccess";
         const msg =
           translations[currentLanguage]?.[successKey] ||

@@ -16,6 +16,10 @@
   --accent-2: #60a5fa;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   min-height: 100%;
