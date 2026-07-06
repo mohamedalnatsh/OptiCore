@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — OptiCore</title>
+    <meta
+      name="description"
+      content="Contact OptiCore — tell us about your project and we'll get back within one business day."
+    />
+    <link rel="icon" type="image/png" href="images/opticore-logo.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="contact.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <a href="index.html" class="logo-link">
+          <img
+            src="/images/opticore-logo.webp"
+            alt="OptiCore logo"
+            class="brand-mark"
+          />
+          <span>OptiCore</span>
+        </a>
+      </div>
+      <button id="langToggle" class="lang-toggle" aria-label="Toggle language">
+        🌐 العربية
+      </button>
+    </header>
+
+    <div id="feedbackModal" class="modal-overlay" hidden aria-hidden="true">
+      <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="feedbackModalTitle">
+        <div class="modal-icon" aria-hidden="true">✓</div>
+        <h2 id="feedbackModalTitle">Success</h2>
+        <p id="feedbackModalMessage"></p>
+        <button id="feedbackModalClose" class="modal-close" type="button">Great!</button>
+      </div>
+    </div>
+
+    <div id="errorModal" class="error-modal-overlay" hidden aria-hidden="true">
+      <div class="error-modal-box" role="dialog" aria-modal="true" aria-labelledby="errorModalTitle">
+        <div class="error-modal-icon" aria-hidden="true">!</div>
+        <h2 id="errorModalTitle">Oops</h2>
+        <p id="errorModalMessage"></p>
+        <button id="errorModalRetry" class="error-modal-retry" type="button">Try Again</button>
+      </div>
+    </div>
+
+    <main class="hero contact-hero">
+      <img src="/images/opticore-logo.webp" alt="" class="hero-logo" />
+      <h1><span data-i18n="contactTitle">Get in Touch</span></h1>
+      <p class="contact-sub" data-i18n="contactSubtitle">
+        Tell us about your project — we usually reply within one business day.
+      </p>
+
+      <div class="contact-shell">
+        <section class="card contact-card">
+          <div id="formNotification" class="form-notification" role="status" aria-live="polite" aria-atomic="true"></div>
+
+          <div class="channel-toggle" role="tablist" aria-label="Contact channel">
+            <button
+              type="button"
+              id="channelEmail"
+              class="pill pill-primary channel-btn"
+              role="tab"
+              aria-selected="true"
+              data-channel="email"
+            >
+              <i class="fa-solid fa-envelope"></i>
+              <span data-i18n="channelEmail">Email</span>
+            </button>
+            <button
+              type="button"
+              id="channelWhatsapp"
+              class="pill channel-btn"
+              role="tab"
+              aria-selected="false"
+              data-channel="whatsapp"
+            >
+              <i class="fa-brands fa-whatsapp"></i>
+              <span data-i18n="channelWhatsapp">WhatsApp</span>
+            </button>
+          </div>
+
+          <form
+            id="contactForm"
+            class="contact-form"
+            action="https://formspree.io/f/xeebnkko"
+            method="POST"
+            novalidate
+          >
+            <div class="field">
+              <label for="name">
+                <i class="fa-solid fa-user"></i>
+                <span data-i18n="contactName">Name</span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                maxlength="100"
+                autocomplete="name"
+                placeholder="Your full name"
+                data-i18n-placeholder="contactNamePh"
+              />
+              <p
+                class="field-error"
+                data-error-for="name"
+                data-i18n="errorName"
+                hidden
+              >
+                Please enter your name.
+              </p>
+            </div>
+
+            <div class="field">
+              <label for="email">
+                <i class="fa-solid fa-envelope"></i>
+                <span data-i18n="contactEmail">Email</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                maxlength="255"
+                autocomplete="email"
+                placeholder="you@example.com"
+                data-i18n-placeholder="contactEmailPh"
+              />
+              <p
+                class="field-error"
+                data-error-for="email"
+                data-i18n="errorEmail"
+                hidden
+              >
+                Please enter a valid email address.
+              </p>
+            </div>
+
+            <div class="field">
+              <label for="whatsappNumber">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span data-i18n="contactWhatsappLabel">WhatsApp Number</span>
+              </label>
+              <div class="whatsapp-input-row">
+                <select
+                  id="whatsappCountryCode"
+                  name="whatsapp_country_code"
+                  class="whatsapp-country-select"
+                  aria-label="Country code"
+                ></select>
+                <input
+                  type="text"
+                  id="whatsappNumber"
+                  name="whatsapp_number"
+                  inputmode="numeric"
+                  pattern="[0-9]*"
+                  maxlength="9"
+                  minlength="9"
+                  autocomplete="tel"
+                  placeholder="5XXXXXXXX"
+                  data-i18n-placeholder="contactWhatsappPlaceholder"
+                />
+              </div>
+              <p
+                class="field-error"
+                data-error-for="whatsappNumber"
+                data-i18n="contactWhatsappError"
+                hidden
+              >
+                Please enter a valid WhatsApp number.
+              </p>
+            </div>
+
+            <div class="field">
+              <span class="field-label">
+                <i class="fa-solid fa-briefcase"></i>
+                <span data-i18n="contactService">Service</span>
+              </span>
+              <div
+                class="service-options"
+                role="group"
+                aria-labelledby="serviceLabel"
+              >
+                <label class="service-option">
+                  <input
+                    type="checkbox"
+                    name="service"
+                    value="Automate Your Workflow"
+                  />
+                  <span data-i18n="serviceAutomate">Automate Your Workflow</span>
+                </label>
+                <label class="service-option">
+                  <input
+                    type="checkbox"
+                    name="service"
+                    value="Build Your Web Presence"
+                  />
+                  <span data-i18n="serviceWeb">Build Your Web Presence</span>
+                </label>
+                <label class="service-option">
+                  <input
+                    type="checkbox"
+                    name="service"
+                    value="Secure Your Assets"
+                  />
+                  <span data-i18n="serviceSecure">Secure Your Assets</span>
+                </label>
+                <label class="service-option">
+                  <input type="checkbox" name="service" value="Other" />
+                  <span data-i18n="serviceOther">Other</span>
+                </label>
+              </div>
+              <p
+                class="field-error"
+                data-error-for="service"
+                data-i18n="errorService"
+                hidden
+              >
+                Please select at least one service.
+              </p>
+            </div>
+
+            <div class="field">
+              <label for="message">
+                <i class="fa-solid fa-message"></i>
+                <span data-i18n="contactMessage">Message</span>
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                required
+                maxlength="2000"
+                placeholder="Share a few details about your project…"
+                data-i18n-placeholder="contactMessagePh"
+              ></textarea>
+              <p
+                class="field-error"
+                data-error-for="message"
+                data-i18n="errorMessage"
+                hidden
+              >
+                Please write a short message.
+              </p>
+            </div>
+
+            <button type="submit" class="cta contact-submit">
+              <i class="fa-solid fa-paper-plane"></i>
+              <span data-i18n="contactSubmit">Send Message</span>
+            </button>
+          </form>
+        </section>
+
+        <aside class="card quick-info-card" aria-label="Quick contact information">
+          <p class="quick-info-badge" data-i18n="quickInfoEyebrow">Quick info</p>
+          <h2 data-i18n="quickInfoTitle">Let's build something exceptional together</h2>
+          <p class="quick-info-copy" data-i18n="quickInfoCopy">
+            Need a polished landing page, secure automation, or a high-conversion web experience? Share a few details and we will map the right plan.
+          </p>
+
+          <div class="quick-info-contact">
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=contact.opticore@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="quick-info-link"
+            >
+              <i class="fa-solid fa-envelope"></i>
+              <span>contact.opticore@gmail.com</span>
+            </a>
+            <div class="quick-info-meta">
+              <i class="fa-regular fa-clock"></i>
+              <span data-i18n="quickInfoResponse">Replies within 1 business day</span>
+            </div>
+          </div>
+
+          <div class="quick-info-socials" aria-label="Social links">
+            <a href="https://wa.me/972567653938" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="https://github.com/mohamedalnatsh" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.instagram.com/opticore.dev/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </body>
+</html>
+
+    <footer class="footer">
+      <nav class="foot-links">
+        <a href="/contact.html"
+          ><span data-i18n="footerContact">Contact Us</span></a
+        >
+        | <a href="#terms"><span data-i18n="footerTerms">terms</span></a> |
+        <a href="#privacy"><span data-i18n="footerPrivacy">privacy</span></a> |
+        <a href="#services"><span data-i18n="footerServices">services</span></a>
+        |
+        <a href="#support"><span data-i18n="footerSupport">support</span></a>
+      </nav>
+      <div class="socials">
+        <a
+          href="https://wa.me/972567653938"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/whatsapp.svg"
+            alt="WhatsApp"
+          />
+        </a>
+        <a
+          href="https://github.com/mohamedalnatsh"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/github.svg"
+            alt="GitHub"
+          />
+        </a>
+        <a
+          href="https://www.instagram.com/opticore.dev/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram"
+        >
+          <img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/instagram.svg"
+            alt="Instagram"
+          />
+        </a>
+      </div>
+      <div class="tag">
+        <span data-i18n="footerTag"
+          >OptiCore.dev | The Core of Optimization</span
+        >
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
