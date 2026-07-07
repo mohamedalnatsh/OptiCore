@@ -1,8 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   const cta = document.getElementById("cta");
   const langToggle = document.getElementById("langToggle");
-  const i18nElements = document.querySelectorAll("[data-i18n]");
-  const i18nPlaceholders = document.querySelectorAll("[data-i18n-placeholder]");
+  const i18nElements = document.querySelectorAll(
+    "[data-i18n]:not([data-lock-english='true'])"
+  );
+  const i18nPlaceholders = document.querySelectorAll(
+    "[data-i18n-placeholder]:not([data-lock-english='true'])"
+  );
 
   const WHATSAPP_URL = "https://wa.me/972567653938";
   const LANGUAGE_STORAGE_KEY = "opticore-language";
@@ -314,6 +318,42 @@ document.addEventListener("DOMContentLoaded", () => {
       supportCtaText:
         "We’re ready to help you shape your next step and answer any open questions.",
       supportCtaButton: "Contact Us",
+      projectsEyebrow: "OptiCore Portfolio",
+      projectsHeroTitle: "our projects",
+      projectsHeroText:
+        "We combine security, modern interfaces, and automation to deliver reliable digital solutions built with care for today’s business needs.",
+      projectsSectionSecurityTitle: "Security Tools",
+      projectsSectionSecurityText:
+        "Advanced security auditing utilities, vulnerability scanners, and automated incident response scripts designed to protect infrastructure against active exploitation.",
+      projectsSectionWebTitle: "Web Interfaces",
+      projectsSectionWebText:
+        "Modern, lightweight, and fast websites designed to deliver a polished and professional experience.",
+      projectsSectionBotsTitle: "Bots",
+      projectsSectionBotsText:
+        "Automation for everyday operations through intelligent bots that support communication, tracking, and workflow management.",
+      preview_btn: "Preview",
+      uncle_ashraf_desc:
+        "A specialized router security auditing and botnet remediation utility built to detect critical vulnerabilities in LB-LINK firmware and instantly sanitize compromised hosts from remote command injections.",
+      ecommerce_dashboard_desc:
+        "A modern admin dashboard experience for e-commerce stores with a flexible layout and polished product management workflows.",
+      minimalist_portfolio_desc:
+        "A contemporary personal website focused on simplicity, clarity, and a refined professional presentation.",
+      crud_js_desc:
+        "A practical CRUD application that demonstrates clean data management and a smooth, user-friendly interface.",
+      cafe_page_desc:
+        "A visually polished coffee shop landing page designed to deliver an elegant browsing experience.",
+      carco_desc:
+        "A modern automotive website experience that reflects a strong brand identity with clear and professional presentation.",
+      islamic_center_desc:
+        "A structured Islamic center website designed to present content and services in an organized and professional manner.",
+      masao_desc:
+        "A professional web template centered on balance between functional design and visual flexibility.",
+      form_template_desc:
+        "An interactive form template designed to make data entry clear, intuitive, and efficient.",
+      eye_hospital_bot_desc:
+        "An automated system for scheduling medical appointments, tracking records, and streamlining patient registration workflows.",
+      fortnite_update_bot_desc:
+        "An intelligent tracking bot designed to monitor Fortnite updates, check server status, and send instant notifications.",
       // contact page
       contactTitle: "Get in Touch",
       contactSubtitle:
@@ -433,6 +473,42 @@ document.addEventListener("DOMContentLoaded", () => {
       supportCtaText:
         "نحن جاهزون لمساعدتك في تشكيل الخطوة القادمة والإجابة على أي أسئلة مفتوحة.",
       supportCtaButton: "تواصل معنا",
+      projectsEyebrow: "مشاريعنا",
+      projectsHeroTitle: "معرض أعملنا",
+      projectsHeroText:
+        "ندمج بين الأمان والواجهة الحديثة والأتمتة لتقديم حلول رقمية موثوقة ومصممة بعناية لتلبية احتياجات الأعمال اليوم.",
+      projectsSectionSecurityTitle: "الأدوات الأمنية",
+      projectsSectionSecurityText:
+        "أدوات متقدمة لتدقيق الأمان وفحص الثغرات الشبكية، وسكربتات آلية للاستجابة للحوادث وتطهير البنية التحتية من الاختراقات النشطة.",
+      projectsSectionWebTitle: "واجهات الويب",
+      projectsSectionWebText:
+        "مواقع حديثة وخفيفة وسريعة مصممة لتقديم تجربة بصرية احترافية ومهنية.",
+      projectsSectionBotsTitle: "البوتات",
+      projectsSectionBotsText:
+        "أتمتة العمليات اليومية عبر روبوتات ذكية تدعم التواصل والتتبع وإدارة سير العمل.",
+      preview_btn: "معاينة",
+      uncle_ashraf_desc:
+        "أداة متخصصة لفحص الثغرات الأمنية ومعالجة راوترات LB-LINK، مصممة للكشف عن ثغرات حقن الأوامر عن بُعد وتطهير الأجهزة المخترقة من برمجيات البوت نت الخبيثة.",
+      ecommerce_dashboard_desc:
+        "لوحة تحكم حديثة لتجربة متجر إلكتروني مع تخطيط مرن وسير عمل متقدم لإدارة المنتجات.",
+      minimalist_portfolio_desc:
+        "موقع شخصي عصري يركز على البساطة والوضوح مع واجهة احترافية.",
+      crud_js_desc:
+        "تطبيق CRUD عملي يوضح إدارة البيانات بوضوح وسهولة داخل واجهة مستخدم أنيقة.",
+      cafe_page_desc:
+        "صفحة متجر قهوة مصممة بصريًا بشكل احترافي مع تجربة استخدام سلسة.",
+      carco_desc:
+        "واجهة موقع سيارات حديثة تعكس هوية العلامة التجارية بوضوح واحتراف.",
+      islamic_center_desc:
+        "موقع مركز إسلامي مخصص لتقديم المحتوى والخدمات بشكل منظم واحترافي.",
+      masao_desc:
+        "قالب ويب احترافي يركز على التوازن بين التصميم الوظيفي والمرونة البصرية.",
+      form_template_desc:
+        "قالب نموذج تفاعلي مصمم لتجربة إدخال البيانات بشكل واضح وسهل الاستخدام.",
+      eye_hospital_bot_desc:
+        "نظام برمجي متكامل لأتمتة حجز المواعيد الطبية وتتبع سجلات المرضى.",
+      fortnite_update_bot_desc:
+        "بوت ذكي يقوم برصد وتتبع تحديثات لعبة فورت نايت وحالة خوادمها وإرسال إشعارات فورية.",
       // contact page
       contactTitle: "تواصل معنا",
       contactSubtitle: "أخبرنا عن مشروعك — نرد عادةً خلال يوم عمل واحد.",
