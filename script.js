@@ -351,7 +351,7 @@ document.addEventListener("DOMContentLoaded", () => {
       form_template_desc:
         "An interactive form template designed to make data entry clear, intuitive, and efficient.",
       eye_hospital_bot_desc:
-        "An automated system for scheduling medical appointments, tracking records, and streamlining patient registration workflows.",
+        "A containerized WhatsApp assistant built with Node.js and Docker to automate hospital administrative workflows, helping staff instantly retrieve shift schedules, sterilization SOPs, and internal documents securely.",
       fortnite_update_bot_desc:
         "An intelligent tracking bot designed to monitor Fortnite updates, check server status, and send instant notifications.",
       // contact page
@@ -506,7 +506,7 @@ document.addEventListener("DOMContentLoaded", () => {
       form_template_desc:
         "قالب نموذج تفاعلي مصمم لتجربة إدخال البيانات بشكل واضح وسهل الاستخدام.",
       eye_hospital_bot_desc:
-        "نظام برمجي متكامل لأتمتة حجز المواعيد الطبية وتتبع سجلات المرضى.",
+        "مساعد واتساب مؤتمت ومحمي عبر بيئة Docker ومبني بلغة Node.js، مخصص لأتمتة سير العمل الإداري داخل المستشفى ومساعدة الطواقم في جلب جداول المناوبات، وإجراءات التعقيم (SOPs)، والوثائق الداخلية فوراً.",
       fortnite_update_bot_desc:
         "بوت ذكي يقوم برصد وتتبع تحديثات لعبة فورت نايت وحالة خوادمها وإرسال إشعارات فورية.",
       // contact page
