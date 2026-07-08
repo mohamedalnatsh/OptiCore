@@ -2,16 +2,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const cta = document.getElementById("cta");
   const langToggle = document.getElementById("langToggle");
   const i18nElements = document.querySelectorAll(
-    "[data-i18n]:not([data-lock-english='true'])"
+    "[data-i18n]:not([data-lock-english='true'])",
   );
   const i18nPlaceholders = document.querySelectorAll(
-    "[data-i18n-placeholder]:not([data-lock-english='true'])"
+    "[data-i18n-placeholder]:not([data-lock-english='true'])",
   );
 
   const WHATSAPP_URL = "https://wa.me/972567653938";
   const LANGUAGE_STORAGE_KEY = "opticore-language";
-  const TELEGRAM_BOT_TOKEN = "8683648766:AAEDrT9Kly5EcduT2YLXJXsmCVZKxi5tyAs";
-  const TELEGRAM_CHAT_ID = "8569556264";
 
   const countryDialCodes = [
     { name: "Afghanistan", flag: "🇦🇫", dialCode: "+93" },
@@ -230,7 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const defaultCountry =
-      countryDialCodes.find((country) => country.dialCode === "+970") ||
+      countryDialCodes.find((country) => country.dialCode === "+44") ||
       countryDialCodes[0];
     if (defaultCountry) {
       countrySelect.value = defaultCountry.dialCode;
@@ -308,10 +306,12 @@ document.addEventListener("DOMContentLoaded", () => {
       faq4Question: "Do I need to purchase hosting and a domain myself?",
       faq4Answer:
         "We will assist and guide you to choose the best and most secure cloud providers. However, the purchase and licenses must be registered under your own name or company billing info.",
-      faq5Question: "How do you guarantee the security of bots and automated workflows?",
+      faq5Question:
+        "How do you guarantee the security of bots and automated workflows?",
       faq5Answer:
         "We build using highly optimized code structures and deploy automation tasks on secure sandboxes or restricted servers, preventing token leaks and guaranteeing maximum uptime.",
-      faq6Question: "Do you provide long-term maintenance after project delivery?",
+      faq6Question:
+        "Do you provide long-term maintenance after project delivery?",
       faq6Answer:
         "Every project includes a standard technical warranty period to fix any deployment bugs. Continuous feature updates, monitoring, or regular maintenance can be structured into a monthly retainer plan.",
       supportCtaTitle: "Still need help?",
@@ -769,7 +769,7 @@ document.addEventListener("DOMContentLoaded", () => {
     submitButton.disabled = isLoading;
     submitButton.classList.toggle("is-loading", isLoading);
     submitButton.style.cursor = isLoading ? "not-allowed" : "";
-    submitButton.style.opacity = isLoading ? "0.8" : "";
+    submitButton.style.opacity = isLoading ? "0.4" : "";
 
     const icon = submitButton.querySelector("i");
     if (isLoading) {
@@ -793,7 +793,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   };
-
   contactForm?.addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -840,67 +839,55 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setSubmitButtonLoading(true);
 
-    const formData = new FormData(contactForm);
-    formData.set("name", name);
-    formData.set("email", email);
-    formData.set("whatsapp_country_code", selectedCountryCode);
-    formData.set("whatsapp_number", whatsappValue);
-    formData.set("message", message);
-    formData.set("service", services.join(", "));
-    formData.set(
-      "whatsapp_full",
-      `${selectedCountryCode} ${whatsappValue}`.trim(),
-    );
-
     try {
-      const response = await fetch(contactForm.action, {
-        method: contactForm.method,
-        body: formData,
+      // رابط الووركر الآمن في كلاود فلير
+      const CLOUDFLARE_WORKER_URL =
+        "https://telgram-bot.contact-opticore.workers.dev/";
+
+      // دمج وتنسيق تفاصيل الواتساب والخدمات داخل حقل الرسالة لكي يستلمها الووركر كاملة
+      const fullFormattedMessage = `\n*رقم الواتساب:* ${selectedCountryCode} ${whatsappValue}\n*الخدمات المطلوبة:* ${services.join(", ")}\n\n*الرسالة:* ${message}`;
+
+      const response = await fetch(CLOUDFLARE_WORKER_URL, {
+        method: "POST",
         headers: {
-          Accept: "application/json",
+          "Content-Type": "application/json",
         },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          message: fullFormattedMessage,
+        }),
       });
 
       if (response.ok) {
-        const telegramMessage = `*New OptiCore Inquiry*\n\n*Name:* ${name}\n*Email:* ${email}\n*WhatsApp:* ${selectedCountryCode} ${whatsappValue}\n*Services:* ${services.join(", ")}\n*Message:* ${message}`;
+        const result = await response.json();
 
-        if (TELEGRAM_BOT_TOKEN !== "YOUR_BOT_TOKEN" && TELEGRAM_CHAT_ID !== "YOUR_CHAT_ID") {
-          try {
-            await fetch(
-              `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`,
-              {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                  chat_id: TELEGRAM_CHAT_ID,
-                  text: telegramMessage,
-                  parse_mode: "Markdown",
-                }),
-              },
-            );
-          } catch (telegramError) {
-            console.warn("Telegram notification failed:", telegramError);
-          }
-        }
+        if (result.success) {
+          const successKey = "contactSuccess";
+          const msg =
+            translations[currentLanguage]?.[successKey] ||
+            translations.en[successKey];
 
-        const successKey = "contactSuccess";
-        const msg =
-          translations[currentLanguage]?.[successKey] ||
-          translations.en[successKey];
-        contactForm.reset();
-        showFeedbackModal(msg, "success");
-        contactForm
-          .querySelectorAll(".field.invalid")
-          .forEach((f) => f.classList.remove("invalid"));
-        if (whatsappCountryCodeEl) {
-          const defaultCountry =
-            countryDialCodes.find((country) => country.dialCode === "+970") ||
-            countryDialCodes[0];
-          if (defaultCountry) {
-            whatsappCountryCodeEl.value = defaultCountry.dialCode;
+          contactForm.reset();
+          showFeedbackModal(msg, "success");
+
+          contactForm
+            .querySelectorAll(".field.invalid")
+            .forEach((f) => f.classList.remove("invalid"));
+
+          if (whatsappCountryCodeEl) {
+            const defaultCountry =
+              countryDialCodes.find((country) => country.dialCode === "+970") ||
+              countryDialCodes[0];
+            if (defaultCountry) {
+              whatsappCountryCodeEl.value = defaultCountry.dialCode;
+            }
           }
+        } else {
+          const msg =
+            translations[currentLanguage]?.contactErrorModal ||
+            translations.en.contactErrorModal;
+          showErrorModal(msg);
         }
       } else {
         const msg =
@@ -909,6 +896,7 @@ document.addEventListener("DOMContentLoaded", () => {
         showErrorModal(msg);
       }
     } catch (error) {
+      console.error("Worker connection failed:", error);
       const msg =
         translations[currentLanguage]?.contactErrorModal ||
         translations.en.contactErrorModal;
