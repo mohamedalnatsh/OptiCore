@@ -591,17 +591,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const errorModalRetryButton = document.getElementById("errorModalRetry");
   const errorModalTitle = document.getElementById("errorModalTitle");
 
+  // 1. أضف هذا المتغير في الأعلى لحفظ العنصر الذي كان نشطاً قبل فتح المودال
+  let lastFocusedElement = null;
+
   const closeFeedbackModal = () => {
     if (!modalOverlay) return;
     modalOverlay.classList.remove("visible");
     modalOverlay.setAttribute("aria-hidden", "true");
     modalOverlay.hidden = true;
     window.clearTimeout(closeFeedbackModal.timeoutId);
+
+    // تعديل لأجل الـ Accessibility: إرجاع التركيز للزر الأصلي خارج المودال
+    if (lastFocusedElement) {
+      lastFocusedElement.focus();
+    }
   };
 
   const showFeedbackModal = (message, type = "success") => {
     if (!modalOverlay || !modalMessage || !modalCloseButton || !modalTitle)
       return;
+
+    // تعديل لأجل الـ Accessibility: حفظ الزر الحالي (زر الـ Submit غالباً) قبل فتح المودال
+    lastFocusedElement = document.activeElement;
 
     modalOverlay.classList.remove("error");
     if (type === "error") {
@@ -617,6 +628,9 @@ document.addEventListener("DOMContentLoaded", () => {
     modalIcon.textContent = type === "error" ? "⚠" : "✓";
     modalOverlay.classList.add("visible");
 
+    // تعديل لأجل الـ Accessibility: نقل التركيز مباشرة لزر الإغلاق داخل المودال
+    modalCloseButton.focus();
+
     window.clearTimeout(closeFeedbackModal.timeoutId);
     closeFeedbackModal.timeoutId = window.setTimeout(() => {
       closeFeedbackModal();
@@ -628,6 +642,11 @@ document.addEventListener("DOMContentLoaded", () => {
     errorModalOverlay.classList.remove("visible");
     errorModalOverlay.setAttribute("aria-hidden", "true");
     errorModalOverlay.hidden = true;
+
+    // تعديل لأجل الـ Accessibility: إرجاع التركيز للزر الأصلي خارج المودال
+    if (lastFocusedElement) {
+      lastFocusedElement.focus();
+    }
   };
 
   const showErrorModal = (message) => {
@@ -639,6 +658,9 @@ document.addEventListener("DOMContentLoaded", () => {
     )
       return;
 
+    // تعديل لأجل الـ Accessibility: حفظ الزر الحالي قبل فتح مودال الخطأ
+    lastFocusedElement = document.activeElement;
+
     errorModalTitle.textContent =
       translations[currentLanguage]?.errorModalTitle ||
       translations.en.errorModalTitle;
@@ -649,8 +671,12 @@ document.addEventListener("DOMContentLoaded", () => {
     errorModalOverlay.hidden = false;
     errorModalOverlay.setAttribute("aria-hidden", "false");
     errorModalOverlay.classList.add("visible");
+
+    // تعديل لأجل الـ Accessibility: نقل التركيز لزر إعادة المحاولة
+    errorModalRetryButton.focus();
   };
 
+  // باقي الأكواد والمستمعات (Listeners) الخاصة بك تبقى كما هي تماماً دون تعديل:
   modalOverlay?.addEventListener("click", (event) => {
     if (event.target === modalOverlay) {
       closeFeedbackModal();
