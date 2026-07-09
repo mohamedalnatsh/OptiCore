@@ -61,8 +61,8 @@ Native form handling integrated with **Formspree** for lead generation:
 |:-------|:-----:|:------:|
 | **SEO** | 100/100 | 🚀 Perfect |
 | **Accessibility** | 100/100 | ♿ Perfect |
-| **Best Practices** | 92/100 | 🛡️ Excellent |
-| **Performance** | 95/100 | ⚡ Outstanding |
+| **Best Practices** | 97/100 | 🛡️ Excellent |
+| **Performance** | 100/100 | ⚡ Outstanding |
 
 ### Compliance Certifications
 - ✅ **WCAG 2.1 Level AAA** — Semantic HTML5, native form elements, ARIA labels
@@ -115,7 +115,7 @@ OptiCore/
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/OptiCore.git
+   git clone https://github.com/mohamedalnatsh/OptiCore
    cd OptiCore
    ```
 
@@ -210,7 +210,7 @@ const i18nElements = document.querySelectorAll("[data-i18n]");
 
 - **Email:** [contact@opticore.dev](mailto:contact@opticore.dev)
 - **WhatsApp:** [Message us](https://wa.me/972567653938)
-- **Website:** [https://opticore.dev](https://opticore.dev)
+- **Website:** [mohamedalnatsh.github.io/OptiCore](mohamedalnatsh.github.io/OptiCore)
 
 ---
 
